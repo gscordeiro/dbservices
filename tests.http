@@ -1,0 +1,12 @@
+### GET all users
+GET http://localhost:8080/users/all
+
+### Update user 2
+GET http://localhost:8080/users/update/2?username=anny
+
+### Update user 5
+GET http://localhost:8080/users/update/5?username=anny
+
+### test resource controller
+GET http://localhost:8080/api/resources/myResource?param1=mary
+Authorization: Basic emily 123456

@@ -11,7 +11,7 @@ import jakarta.persistence.Table
 class Role(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
-    var name: String? = null
+    var name: String = ""
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

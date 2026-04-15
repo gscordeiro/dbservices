@@ -1,6 +1,7 @@
 package dev.gscordeiro.dbservices.entity
 
 import jakarta.persistence.CascadeType
+import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -15,7 +16,15 @@ import jakarta.persistence.Table
 class User(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
-    var username: String? = null,
+
+    @Column(nullable = false, unique = true)
+    var username: String = "",
+
+    @Column(nullable = false)
+    val password: String = "",
+
+    @Column(nullable = false)
+    val enabled: Boolean = true,
 
     @ManyToMany(cascade = [CascadeType.ALL])
     @JoinTable(
